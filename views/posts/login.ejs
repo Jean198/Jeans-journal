@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Welcome!</h1>
+
+    <script>
+        const params = new URLSearchParams(window.location.search).get('destination')
+        console.log(params)
+
+        let form = document.createElement('form')
+        form.setAttribute('action', `/users/login?destination=/posts${params.toString()}`)
+        form.setAttribute('method', "POST")
+        let emailInput= document.createElement('input')
+        emailInput.setAttribute('type', 'text')
+        emailInput.setAttribute('name', 'email')
+        let passwordInput= document.createElement('input')
+        passwordInput.setAttribute('type', 'text')
+        passwordInput.setAttribute('name', 'password')
+
+        let button = document.createElement('input')
+        button.setAttribute('type', 'submit')
+
+        form.appendChild(emailInput)
+        form.appendChild(passwordInput)
+        form.appendChild(button)
+
+        let body= document.querySelector('body')
+        body.insertAdjacentElement('beforeend', form)
+
+        
+    </script>
+    <!--
+    <form action="/users/login/" method="POST">
+
+        <input type="text" value="taru@gmail.com" name="email">
+        <input type="text" value="0123456789" name="password">
+        <input type="submit">
+
+
+    </form>
+    -->
+</body>
+</html>

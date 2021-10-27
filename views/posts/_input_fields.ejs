@@ -1,0 +1,15 @@
+  <div >
+    <label for="title">Title</label>
+    <input required value="<%= post.title %>" type="text" name="title" id="title" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Username">
+  </div>
+  <div >
+    <label for="description">Description</label>
+    <textarea name="description" id="description" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Username"><%= post.description %></textarea>
+  </div>
+  <div >
+    <label for="markdown">Markdown</label>
+    <textarea required name="markdown" id="markdown" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Username" rows="10" cols="50"><%= post.markdown %></textarea>
+  </div>
+  
+  <a href="/" class=" border-2 px-4 py-1 bg-gray-700 text-white float-right mt-0 inline">Cancel</a>
+  <button type="submit" class=" border-2 px-4 py-1 bg-green-500 text-white float-left mt-0 inline">Publish</button>

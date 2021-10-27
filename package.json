@@ -1,0 +1,39 @@
+{
+  "name": "Jeans_journal",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npm run tailwind:css && nodemon app.js",
+    "tailwind:css": "postcss public/styles/tailwind.css -o public/styles/style.css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.5",
+    "dompurify": "^2.0.8",
+    "ejs": "^3.0.1",
+    "express": "^4.17.1",
+    "express-session": "^1.17.2",
+    "jsdom": "^16.2.1",
+    "jsonwebtoken": "^8.5.1",
+    "marked": "^0.8.0",
+    "method-override": "^3.0.0",
+    "mongoose": "^6.0.12",
+    "node-localstorage": "^2.2.1",
+    "postcss-cli": "^9.0.1",
+    "slugify": "^1.4.0",
+    "store": "^2.0.12",
+    "store.js": "^1.0.4",
+    "validator": "^13.6.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.3.7",
+    "nodemon": "^2.0.2",
+    "postcss": "^8.3.11",
+    "tailwindcss": "^2.2.17"
+  }
+}

@@ -1,0 +1,22 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link rel="stylesheet" type="text/css" href="/styles/style.css" />
+
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Blog</title>
+</head>
+<body>
+  <div class=" mx-auto border-2  w-6/12 mt-12 p-4 overflow-auto">
+    <h1 class="mb-9 inline-block text-4xl font-bold">Edit post</h1>
+
+    <form action="/posts/<%= post.id %>?_method=PUT" method="POST">
+      <%- include('_input_fields') %>
+    </form>
+  </div>
+</body>
+</html>
