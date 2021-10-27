@@ -25,7 +25,7 @@ mongoose.connect(process.env.DATABASE, {
 
 
 
-
+const port= process.env.PORT || 3000
 
 
 
@@ -65,7 +65,7 @@ app.get('/', async (req, res) => {
 
 app.use('/posts', postRouter)
 
-app.listen(3000)
+app.listen(port)
 
 
 /*
