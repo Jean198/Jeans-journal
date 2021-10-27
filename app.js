@@ -4,6 +4,7 @@ const Post = require('./models/post')
 const User = require('./models/user')
 require('./db/mongoose')
 const userRouter = require('./routes/user')
+require('dotenv').config()
 
 const postRouter = require('./routes/posts')
 const methodOverride = require('method-override')
@@ -13,7 +14,7 @@ const cookieParser= require('cookie-parser')
 
 
 
-mongoose.connect('mongodb+srv://Jean:Tanssi51@democluster.rafje.mongodb.net/jean_journal', {
+mongoose.connect(process.env.DATABASE, {
   useNewUrlParser: true, useUnifiedTopology: true, 
 }
 , err => {
