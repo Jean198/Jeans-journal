@@ -57,13 +57,13 @@ app.post('/users', (req,res)=>{
 })
 
 
-
-app.get('/', async (req, res) => {
+app.get('/posts', async (req, res) => {
   const posts = await Post.find().sort({ createdAt: 'desc' })
   res.render('posts/index', { posts: posts })
 })
 
 app.use('/posts', postRouter)
+app.use('/', postRouter)
 
 app.listen(port)
 
