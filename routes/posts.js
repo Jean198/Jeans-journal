@@ -11,10 +11,12 @@ router.get('/', (req, res) => {
 
 */
 
-
+/*
 router.get('/newPost', auth,  (req, res) => {
   res.render('posts/newpost', { post: new Post() })
 })
+
+*/
 
 router.get('/newNote', auth,  (req, res) => {
   res.render('posts/newNote')
@@ -38,7 +40,7 @@ router.get('/:slug', async (req, res) => {
 router.post('/', auth, async (req, res, next) => {
   req.post = new Post()
   next()
-}, savepostAndRedirect('newPost'))
+}, savepostAndRedirect('newNote'))
 
 router.put('/:id', auth, async (req, res, next) => {
   req.post = await Post.findById(req.params.id)
