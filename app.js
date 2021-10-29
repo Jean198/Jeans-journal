@@ -10,7 +10,7 @@ const path=require('path')
 const postRouter = require('./routes/posts')
 const methodOverride = require('method-override')
 const app = express()
-const bcrypt= require('bcryptjs')
+
 const cookieParser= require('cookie-parser')
 
 var port= process.env.PORT || 3000
