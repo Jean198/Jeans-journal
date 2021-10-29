@@ -2,9 +2,8 @@ const express = require('express')
 const mongoose = require('mongoose')
 const Post = require('./models/post')
 const User = require('./models/user')
-
 const userRouter = require('./routes/user')
-const path=require('path')
+
 
 
 const postRouter = require('./routes/posts')
@@ -16,11 +15,25 @@ const cookieParser= require('cookie-parser')
 var port= process.env.PORT || 3000
 require('dotenv').config();
 
+const connection= async ()=>{
+  try{
 
-mongoose.connect(process.env.DATABASE, {
-  useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true
-})
+    const connect= await mongoose.connect(process.env.DATABASE, {
+      useNewUrlParser: true, useUnifiedTopology: true
 
+      
+    })
+
+    console.log("conected to db!")
+
+  }catch(e){
+
+    console.log(e.message)
+
+  }
+}
+
+connection()
 
 
 
