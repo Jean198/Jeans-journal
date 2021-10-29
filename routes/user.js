@@ -25,7 +25,7 @@ router.post('/users/login', async (req, res) => {
 
     const destination= req.query.destination
     try {
-        const user = await User.findByCredentials(req.body.email, req.body.password)
+        const user = await User.findByCredentials(req.body.username, req.body.password)
         const token = await user.generateAuthToken()
 
         
@@ -78,7 +78,7 @@ router.get('/users/:id', async (req, res) => {
 
 router.patch('/users/:id', async (req, res) => {
     const updates = Object.keys(req.body)
-    const allowedUpdates = ['name', 'email', 'password', 'age']
+    const allowedUpdates = ['name', 'username', 'password', 'age']
     const isValidOperation = updates.every((update) => allowedUpdates.includes(update))
 
     if (!isValidOperation) {

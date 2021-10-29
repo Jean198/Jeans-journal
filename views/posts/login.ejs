@@ -16,9 +16,9 @@
         let form = document.createElement('form')
         form.setAttribute('action', `/users/login?destination=/posts${params.toString()}`)
         form.setAttribute('method', "POST")
-        let emailInput= document.createElement('input')
-        emailInput.setAttribute('type', 'text')
-        emailInput.setAttribute('name', 'email')
+        let usernameInput= document.createElement('input')
+        usernameInput.setAttribute('type', 'text')
+        usernameInput.setAttribute('name', 'username')
         let passwordInput= document.createElement('input')
         passwordInput.setAttribute('type', 'text')
         passwordInput.setAttribute('name', 'password')
@@ -26,7 +26,7 @@
         let button = document.createElement('input')
         button.setAttribute('type', 'submit')
 
-        form.appendChild(emailInput)
+        form.appendChild(usernameInput)
         form.appendChild(passwordInput)
         form.appendChild(button)
 
@@ -38,7 +38,7 @@
     <!--
     <form action="/users/login/" method="POST">
 
-        <input type="text" value="taru@gmail.com" name="email">
+        <input type="text" value="taru@gmail.com" name="username">
         <input type="text" value="0123456789" name="password">
         <input type="submit">
 
