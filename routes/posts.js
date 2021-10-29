@@ -13,7 +13,7 @@ router.get('/', (req, res) => {
 
 
 router.get('/newPost', auth,  (req, res) => {
-  res.render('posts/newpost')
+  res.render('posts/newpost', { post: new Post() })
 })
 
 router.get('/login', (req, res) => {
