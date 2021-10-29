@@ -2,7 +2,7 @@ const express = require('express')
 const mongoose = require('mongoose')
 const Post = require('./models/post')
 const User = require('./models/user')
-require('./db/mongoose')
+
 const userRouter = require('./routes/user')
 const path=require('path')
 
