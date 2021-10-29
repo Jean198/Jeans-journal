@@ -30,7 +30,7 @@ router.post('/users/login', async (req, res) => {
 
         
         
-        console.log(token)
+        
         
         res.cookie('auth',token)
 
@@ -43,7 +43,7 @@ router.post('/users/login', async (req, res) => {
         
         
         
-        await console.log("this is my token "+token)
+        
         
         
     } catch (e) {
