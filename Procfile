@@ -1,1 +1,1 @@
-web:npm run tailwind:css && node app.js
+web: node app.js
