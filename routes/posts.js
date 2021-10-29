@@ -3,11 +3,13 @@ const Post = require('./../models/post')
 const router = express.Router()
 const auth= require('./../middleware/auth')
 
-
+/*
 router.get('/', (req, res) => {
   
   res.render('posts/home')
 })
+
+*/
 
 
 router.get('/newPost', auth,  (req, res) => {

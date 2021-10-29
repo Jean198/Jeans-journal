@@ -4,7 +4,8 @@ const Post = require('./models/post')
 const User = require('./models/user')
 require('./db/mongoose')
 const userRouter = require('./routes/user')
-require('dotenv').config()
+const path=require('path')
+
 
 const postRouter = require('./routes/posts')
 const methodOverride = require('method-override')
@@ -12,20 +13,17 @@ const app = express()
 const bcrypt= require('bcryptjs')
 const cookieParser= require('cookie-parser')
 
+var port= process.env.PORT || 3000
+require('dotenv').config();
 
 
 mongoose.connect(process.env.DATABASE, {
-  useNewUrlParser: true, useUnifiedTopology: true, 
-}
-, err => {
-  if(err) throw err;
-  console.log('Connected to MongoDB!!!')
-  });
+  useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true
+})
 
 
 
 
-const port= process.env.PORT || 3000
 
 
 
@@ -57,13 +55,15 @@ app.post('/users', (req,res)=>{
 })
 
 
-app.get('/posts', async (req, res) => {
+app.get('/', async (req, res) => {
   const posts = await Post.find().sort({ createdAt: 'desc' })
   res.render('posts/index', { posts: posts })
 })
 
+
+
 app.use('/posts', postRouter)
-app.use('/', postRouter)
+//app.use('/', postRouter)
 
 app.listen(port)
 
