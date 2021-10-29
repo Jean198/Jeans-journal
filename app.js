@@ -76,7 +76,8 @@ app.get('/', async (req, res) => {
 
 
 app.use('/posts', postRouter)
-//app.use('/', postRouter)
+app.use('/', postRouter)
+app.use('/test',postRouter )
 
 app.listen(port)
 

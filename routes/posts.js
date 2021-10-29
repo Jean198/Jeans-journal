@@ -16,6 +16,10 @@ router.get('/newPost', auth,  (req, res) => {
   res.render('posts/newpost', { post: new Post() })
 })
 
+router.get('/testpage',  (req, res) => {
+  res.render('posts/testpage')
+})
+
 router.get('/login', (req, res) => {
   res.render('posts/login')
 })
