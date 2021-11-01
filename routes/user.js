@@ -28,10 +28,6 @@ router.post('/users/login', async (req, res) => {
         const user = await User.findByCredentials(req.body.username, req.body.password)
         const token = await user.generateAuthToken()
 
-        
-        
-        
-        
         res.cookie('auth',token)
 
         if(destination){
@@ -40,13 +36,7 @@ router.post('/users/login', async (req, res) => {
             return res.redirect('/posts/newPost')
         }
 
-        
-        
-        
-        
-        
-        
-    } catch (e) {
+          } catch (e) {
         res.status(400).send()
     }
 })
@@ -120,11 +110,3 @@ router.delete('/users/:id', async (req, res) => {
 })
 
 module.exports = router
-
-
-
-
-
-
-
-

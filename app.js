@@ -21,7 +21,7 @@ const connection= async ()=>{
     const connect= await mongoose.connect(process.env.DATABASE, {
       useNewUrlParser: true, useUnifiedTopology: true
 
-      
+
     })
 
     console.log("conected to db!")
@@ -80,5 +80,3 @@ app.use('/', postRouter)
 app.use('/test',postRouter )
 
 app.listen(port)
-
-

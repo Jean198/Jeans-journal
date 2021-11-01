@@ -34,7 +34,7 @@ router.get('/edit/:id', auth, async (req, res) => {
 router.get('/:slug', async (req, res) => {
   const post = await Post.findOne({ slug: req.params.slug })
   if (post == null) res.redirect('/')
-  res.render('posts/show', { post: post })
+  res.render('posts/read', { post: post })
 })
 
 router.post('/', auth, async (req, res, next) => {

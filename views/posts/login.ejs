@@ -4,46 +4,79 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/styles/style.css" />
     <title>Document</title>
+
+    <style>
+        .login-container{
+            
+            width:20%;
+            margin: 0 auto;
+            margin-top: 200px;
+            padding: 20px;
+        }
+        .inputs{
+            display: block;
+            margin-top: 10px;
+            border: solid 1px;
+            padding: 5px 20px;
+
+
+        }
+
+        .submitbutton{
+         margin-top: 10px;
+         border: solid 1px white;
+         padding: 0px 20px;
+         background-color:#57C3FF ;
+        }
+    </style>
 </head>
-<body>
-    <h1>Welcome!</h1>
+<body class="bg-gray-400">
 
-    <script>
-        const params = new URLSearchParams(window.location.search).get('destination')
-        console.log(params)
+    <div class="login-container bg-gray-200 ">
+    <h1>Please login to make changes</h1>
 
-        let form = document.createElement('form')
-        form.setAttribute('action', `/users/login?destination=/posts${params.toString()}`)
-        form.setAttribute('method', "POST")
-        let usernameInput= document.createElement('input')
-        usernameInput.setAttribute('type', 'text')
-        usernameInput.setAttribute('name', 'username')
-        let passwordInput= document.createElement('input')
-        passwordInput.setAttribute('type', 'text')
-        passwordInput.setAttribute('name', 'password')
+    
 
-        let button = document.createElement('input')
-        button.setAttribute('type', 'submit')
+        <script>
+            const params = new URLSearchParams(window.location.search).get('destination')
+            console.log(params)
+    
+            let form = document.createElement('form')
+            form.setAttribute('action', `/users/login?destination=/posts${params.toString()}`)
+            form.setAttribute('method', "POST")
+            let usernameInput= document.createElement('input')
+            usernameInput.classList.add("inputs")
 
-        form.appendChild(usernameInput)
-        form.appendChild(passwordInput)
-        form.appendChild(button)
+            usernameInput.setAttribute('type', 'text')
+            usernameInput.setAttribute('name', 'username')
+            usernameInput.setAttribute('placeholder', "username")
+            usernameInput.setAttribute('required',"")
+            let passwordInput= document.createElement('input')
+            passwordInput.classList.add("inputs")
+            passwordInput.setAttribute('type', 'text')
+            passwordInput.setAttribute('name', 'password')
+            passwordInput.setAttribute('placeholder', "password")
+            passwordInput.setAttribute('required',"")
+    
+            let button = document.createElement('input')
+            button.classList.add("submitbutton")
+            button.setAttribute('type', 'submit')
+    
+            form.appendChild(usernameInput)
+            form.appendChild(passwordInput)
+            form.appendChild(button)
+    
+            let container= document.querySelector('.login-container')
+            container.appendChild(form)
+    
+            
+        </script>
 
-        let body= document.querySelector('body')
-        body.insertAdjacentElement('beforeend', form)
+    </div>
 
-        
-    </script>
-    <!--
-    <form action="/users/login/" method="POST">
-
-        <input type="text" value="taru@gmail.com" name="username">
-        <input type="text" value="0123456789" name="password">
-        <input type="submit">
-
-
-    </form>
-    -->
+    
+    
 </body>
 </html>

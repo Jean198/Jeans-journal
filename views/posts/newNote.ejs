@@ -9,25 +9,63 @@
 
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Blog</title>
+  <style>
+    .buttons{
+      border-radius: 5px;
+    }
+
+    .menu-links:hover{
+      background-color:#57C3FF ;
+      transition: 0.5s;
+    }
+
+    .menu-links{
+      background-color: #374151 ;
+    }
+
+    .reademore-publish{
+
+      background-color:#065F46;
+      transition: 0.5s;
+
+    }
+
+    .reademore-publish:hover{
+       background-color: lightsteelblue;
+    }
+
+    .edit-cancel{
+
+      background-color: #374151;
+      transition: 0.5s;
+
+    }
+    .edit-cancel:hover{
+      background-color: lightsteelblue;
+    }
+
+    .wrapper{
+      border-radius: 5px;
+    }
+  </style>
 </head>
-<body class="bg-gray-400">
+<body class="bg-gray-800">
   <div class=" w-10/12  mx-auto flex justify-center ">
 
-    <nav id="navbar" class="mt-12 p-4 bg-white w-2/12">
+    <nav id="navbar" class="mt-12 p-4 bg-white w-2/12 wrapper">
                   
         
       <ul>
         
-        <a href="/posts/newPost" class=" border-2 px-4 py-1 bg-jean-blue text-white  mt-0 inline-block w-full mt-4 text-center" >+New Post</a>
-        <a href="/" class=" border-2 px-4 py-1 bg-jean-blue text-white  mt-0 inline-block w-full mt-4 text-center" >All Posts</a>
-        <a href="#" class=" border-2 px-4 py-1 bg-jean-blue text-white  mt-0 inline-block w-full mt-4 text-center" >......</a>
-        <a href="#" class=" border-2 px-4 py-1 bg-jean-blue text-white  mt-0 inline-block w-full mt-4 text-center" >......</a>
+        
+        <a href="/" class=" border-2 px-4 py-1 bg-jean-blue text-white  mt-0 inline-block w-full mt-4 text-center buttons menu-links" >All Posts</a>
+        
       </ul>
   
      </nav>
 
-    <div class="  border-2  w-6/12 mt-12 p-10 bg-gray-200">
-      <h1 class="mb-9 inline-block text-4xl font-bold">New post</h1>
+    <div class="  border-2  w-6/12 mt-12 p-10 bg-gray-200 wrapper">
+      <h1 class="mb-9 inline-block text-4xl font-bold">+New Note</h1>
       
   
       <form action="/posts" method="POST">
@@ -44,8 +82,8 @@
             <label for="markdown">Markdown</label>
             <textarea required name="markdown" id="markdown" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Username" rows="15" cols="50"></textarea>
           </div>
-          <button type="submit" class=" border-2 px-4 py-1 bg-green-500 text-white float-left mt-0 inline">Publish</button>
-          <a href="/" class=" border-2 px-4 py-1 bg-gray-700 text-white float-right mt-0 inline">Cancel</a>
+          <button type="submit" class=" border-2 px-4 py-1 bg-green-800 text-white float-left mt-0 inline readmore-publish">Publish</button>
+          <a href="/" class=" border-2 px-4 py-1 bg-gray-700 text-white float-right mt-0 inline edit-cancel">Cancel</a>
         
        
       </form>

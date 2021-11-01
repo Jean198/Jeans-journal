@@ -7,20 +7,68 @@
   <link rel="stylesheet" type="text/css" href="/styles/style.css" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Blog</title>
+
+  <style>
+    .wrapper{
+      border-radius: 5px;
+    }
+    .even-notes{
+      border: 1px;
+      border-radius: 5px;
+    }
+
+    .odd-notes{
+      border-radius: 5px;
+    }
+
+    .buttons{
+      border-radius: 5px;
+    }
+
+    .menu-links:hover{
+      background-color:#57C3FF ;
+      transition: 0.5s;
+    }
+
+    .menu-links{
+      background-color: #374151 ;
+    }
+
+    .readmore-publish{
+
+      background-color:#065F46;
+      transition: 0.5s;
+
+    }
+
+    .readmore-publish:hover{
+       background-color: lightsteelblue;
+    }
+
+    .edit-cancel{
+
+      background-color: #374151;
+      transition: 0.5s;
+
+    }
+    .edit-cancel:hover{
+      background-color: lightsteelblue;
+    }
+  </style>
 </head>
-<body class="bg-gray-400 ">
+<body class="bg-gray-800">
 
-  <div class=" w-10/12 mx-auto flex justify-center"> 
+  <div class=" w-10/12 mx-auto flex justify-center "> 
 
-    <nav id="navbar" class="mt-12 p-4 bg-white w-2/12">
+    <nav id="navbar" class="mt-12 p-4 bg-white w-2/12 wrapper">
                   
         
       <ul class="mt-6 ">
         
-        <a href="/posts/newNote" class=" border-2 px-4 py-1 bg-jean-blue text-white  mt-0 inline-block w-full mt-4 text-center" >+New Note</a>
+        <a href="/posts/newNote" class=" border-2 px-4 py-1 bg-jean-blue text-white  mt-0 inline-block w-full mt-4 text-center buttons menu-links" >+New Note</a>
         
-        <a href="/" class=" border-2 px-4 py-1 bg-jean-blue text-white  mt-0 inline-block w-full mt-4 text-center" >All Posts</a>
-        <a href="" class=" border-2 px-4 py-1 bg-jean-blue text-white  mt-0 inline-block w-full mt-4 text-center" >......</a>
+        
+        
         
       </ul>
   
@@ -34,7 +82,7 @@
     
       
   
-      <div class="  border-2  w-6/12 mt-12 p-10 bg-gray-200">
+      <div class="  border-2  w-6/12 mt-12 p-10 bg-gray-200 wrapper">
        
         
         
@@ -46,28 +94,28 @@
           
     
           <% if(posts.indexOf(post)%2== 0){ %>
-            <div class=" border border-black w-12/12 mt-4 bg-green-200">
+            <div class=" border w-12/12 mt-4 odd-notes bg-gray-300">
               <div class="border-2 p-4 overflow-auto">
                 <h4 class="mb-6 text-xl font-bold"><%= post.title %></h4>
                 <div class=" w-24 p-2 text-green-800 font-bold" >
                   <%= post.createdAt.toLocaleDateString() %>
                 </div>
-                <div class="mt-2 mb-2 text-blue-500 "><%= post.description %></div>
-                <a href="posts/<%= post.slug %>" class=" border-2 px-4 py-1 bg-green-500 text-white float-left mt-0 inline" >Read More</a>
-                <a href="posts/edit/<%= post.id %>" class=" border-2 px-4 py-1 bg-gray-700 text-white float-right mt-0 inline">Edit</a>
+                <div class="mt-2 mb-2 text-description-color"><%= post.description %></div>
+                <a href="posts/<%= post.slug %>" class=" border-2 px-4 py-1 bg-green-800 text-white float-left mt-0 inline buttons readmore-publish" >Read More</a>
+                <a href="posts/edit/<%= post.id %>" class=" border-2 px-4 py-1 bg-gray-700 text-white float-right mt-0 inline buttons edit-cancel">Edit</a>
                 
               </div>
             </div>
            <% } else{ %>  
-            <div class=" border border-black w-12/12 mt-4 bg-red-200">
+            <div class=" border  w-12/12 mt-4 even-notes bg-white">
               <div class="border-2 p-4 overflow-auto">
                 <h4 class="mb-6 text-xl font-bold"><%= post.title %></h4>
                 <div class=" w-24 p-2 text-green-800 font-bold" >
                    <%= post.createdAt.toLocaleDateString() %>
                 </div>
-                <div class="mt-2 mb-2 text-blue-500 "><%= post.description %></div>
-                <a href="posts/<%= post.slug %>" class=" border-2 px-4 py-1 bg-green-500 text-white float-left mt-0 inline" >Read More</a>
-                <a href="posts/edit/<%= post.id %>" class=" border-2 px-4 py-1 bg-gray-700 text-white float-right mt-0 inline">Edit</a>
+                <div class="mt-2 mb-2 text-description-color "><%= post.description %></div>
+                <a href="posts/<%= post.slug %>" class=" border-2 px-4 py-1 bg-green-800 text-white float-left mt-0 inline readmore-publish buttons" >Read More</a>
+                <a href="posts/edit/<%= post.id %>" class=" border-2 px-4 py-1 bg-gray-700 text-white float-right mt-0 inline edit-cancel buttons">Edit</a>
                 
               </div>
             </div>
