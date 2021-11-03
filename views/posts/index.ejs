@@ -22,7 +22,7 @@
     }
 
     .odd-notes{
-      border-radius: 5px;
+      border-radius: 10px;
     }
 
     .odd-notes:hover{
@@ -68,7 +68,7 @@
 </head>
 <body class="bg-gray-800">
 
-  <div class=" bigwrapper border border-black w-10/12 mx-auto flex justify-center "> 
+  <div class=" bigwrapper w-10/12 mx-auto flex justify-center "> 
 
     <nav id="navbar" class="mt-12 p-4 bg-white w-2/12 wrapper">
                   
@@ -104,8 +104,9 @@
           
     
           <% if(posts.indexOf(post)%2== 0){ %>
-            <div class=" border w-12/12 mt-4 odd-notes bg-gray-300">
-              <div class="border-2 p-4 overflow-auto">
+            
+            <div class=" border w-12/12 mt-4 odd-notes bg-gray-300 ">
+              <div class="border-2 p-4 overflow-auto rounded-xl">
                 <h4 class="mb-6 text-3xl font-bold"><%= post.title %></h4>
                 <div class=" w-24 p-2 text-green-800 text-xl font-bold " >
                   <%= post.createdAt.getDate()+"."+post.createdAt.getMonth()+"."+post.createdAt.getFullYear() %>
@@ -118,7 +119,7 @@
             </div>
            <% } else{ %>  
             <div class=" border  w-12/12 mt-4 even-notes bg-white">
-              <div class="border-2 p-4 overflow-auto">
+              <div class="border-2 p-4 overflow-auto rounded-xl">
                 <h4 class="mb-6 text-3xl font-bold"><%= post.title %></h4>
                 <div class=" w-24 p-2 text-green-800 text-xl font-bold " >
                   <%= post.createdAt.getDate()+"."+post.createdAt.getMonth()+"."+post.createdAt.getFullYear() %>
