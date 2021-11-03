@@ -14,8 +14,8 @@
     }
 
     .menu-links:hover{
-      background-color:#57C3FF ;
-      transition: 0.5s;
+      background-color:green;
+      transition: 1s;
     }
 
     .menu-links{
@@ -24,7 +24,7 @@
 
     .reademore-publish{
 
-      background-color:#065F46;
+      background-color:green;
       transition: 0.5s;
 
     }
@@ -59,6 +59,8 @@
         <a href="/posts/newNote" class=" border-2 px-4 py-1 bg-jean-blue text-white  mt-0 inline-block w-full mt-4 text-center buttons menu-links" >+New Note</a>
         
         <a href="/" class=" border-2 px-4 py-1 bg-jean-blue text-white  mt-0 inline-block w-full mt-4 text-center buttons menu-links" >All Notes</a>
+        <a href="/posts/edit/<%= post.id %>" class=" border-2 px-4 py-1 bg-jean-blue text-white  mt-0 inline-block w-full mt-4 text-center buttons menu-links" >Edit</a>
+        
         
         
       </ul>
@@ -67,7 +69,8 @@
   
   
     <div class="  border-2  w-8/12 mt-12 p-10 bg-gray-200 wrapper">
-      <h1 class="mb-9 inline-block text-4xl font-bold"><%= post.title %></h1>
+      <h1 class="mb-9 inline-block text-4xl font-bold text-center"><%= post.title %></h1>
+      
       <div class=" mb-2 text-xl font-bold">
         <%= post.createdAt.getDate()+"."+post.createdAt.getMonth()+"."+post.createdAt.getFullYear() %>
       </div>
