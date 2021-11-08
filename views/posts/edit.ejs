@@ -15,7 +15,7 @@
     }
 
     .menu-links:hover{
-      background-color:green;
+      background-color:#739b25;
       transition: 0.5s;
     }
 
@@ -25,7 +25,7 @@
 
     .readmore-publish{
 
-      background-color:green;
+      background-color:#739b25;
       transition: 0.5s;
 
     }
@@ -48,10 +48,34 @@
       border-radius: 5px;
       
     }
+
+    @media screen and (max-width: 1000px) {
+      .bigwrapper{
+        flex-direction: column;
+        border: solid 1px white;
+        width: 100%;
+      }
+
+      #navbar{
+        width:100%;
+        border-radius: 0%;
+        margin-top: 0px;
+      }
+
+      #notes-wrapper{
+        width: 100%;
+        margin-top:0px;
+        border-radius: 0%;
+        padding: 2px;
+      }
+
+      }
+
+    
   </style>
 </head>
 <body class="bg-gray-800">
-  <div class=" w-10/12  mx-auto flex justify-center min-h-55" >
+  <div class=" bigwrapper w-10/12  mx-auto flex justify-center min-h-55" >
 
     <nav id="navbar" class="mt-12 p-4 bg-white w-2/12 wrapper">
                   
@@ -67,7 +91,7 @@
   
      </nav>
 
-    <div class="  border-2  w-8/12 mt-12 p-10 bg-gray-200 wrapper">
+    <div id="notes-wrapper" class="  border-2  w-8/12 mt-12 p-10 bg-gray-200 wrapper">
       <h1 class="mb-9 inline-block text-4xl font-bold">Edit Note</h1>
   
       <form action="/posts/<%= post.id %>?_method=PUT" method="POST">
