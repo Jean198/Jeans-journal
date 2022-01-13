@@ -41,6 +41,8 @@ router.post('/users/login', async (req, res) => {
     }
 })
 
+
+
 router.get('/users', auth, async (req, res) => {
     try {
         const users = await User.find({})
